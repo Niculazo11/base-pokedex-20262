@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Decorative dashed divider with diamond ends, used under the navbar */
+.dashed-divider {
+  height: 4px;
+  background-image: repeating-linear-gradient(to right, #1b1b1b 0 10px, transparent 10px 20px);
+  position: relative;
+}
+.dashed-divider::before,
+.dashed-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  background: #1b1b1b;
+  transform: translateY(-50%) rotate(45deg);
+}
+.dashed-divider::before {
+  left: 2px;
+}
+.dashed-divider::after {
+  right: 2px;
+}
